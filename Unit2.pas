@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DBXMSSQL, Data.FMTBcd,
   Vcl.StdCtrls, Data.DB, Datasnap.DBClient, Datasnap.Provider, Data.SqlExpr,
-  Vcl.Grids, Vcl.DBGrids, Vcl.Mask;
+  Vcl.Grids, Vcl.DBGrids, Vcl.Mask, Vcl.Menus;
 
 type
   TForm2 = class(TForm)
@@ -17,7 +17,6 @@ type
     DataSetProvider1: TDataSetProvider;
     ClientDataSet1: TClientDataSet;
     DataSource1: TDataSource;
-    Query2: TSQLQuery;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
@@ -32,9 +31,10 @@ type
     btnPesquisar: TButton;
     btnLimpar: TButton;
     btnImprimir: TButton;
-    txtIdade: TEdit;
     txtCpf: TMaskEdit;
     DBGrid1: TDBGrid;
+    txtIdade: TEdit;
+    Query2: TSQLQuery;
     procedure btnNovoClick(Sender: TObject);
     procedure btnAlterarClick(Sender: TObject);
     procedure btnExcluirClick(Sender: TObject);

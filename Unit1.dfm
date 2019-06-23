@@ -7,14 +7,14 @@ object Form1: TForm1
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -11
+  Font.Height = -12
   Font.Name = 'Tahoma'
-  Font.Style = []
+  Font.Style = [fsBold]
   Menu = MainMenu1
   OldCreateOrder = False
   OnCreate = FormCreate
   PixelsPerInch = 96
-  TextHeight = 13
+  TextHeight = 14
   object MainMenu1: TMainMenu
     Left = 8
     Top = 8

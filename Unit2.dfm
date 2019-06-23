@@ -1,20 +1,21 @@
 object Form2: TForm2
   Left = 0
   Top = 0
-  Caption = 'Form2'
+  BorderIcons = [biSystemMenu]
+  Caption = 'Clientes'
   ClientHeight = 398
   ClientWidth = 781
   Color = clHotLight
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -11
+  Font.Height = -12
   Font.Name = 'Tahoma'
-  Font.Style = []
+  Font.Style = [fsBold]
   OldCreateOrder = False
   Position = poScreenCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
-  TextHeight = 13
+  TextHeight = 14
   object Label1: TLabel
     Left = 56
     Top = 88
@@ -71,7 +72,7 @@ object Form2: TForm2
     Left = 56
     Top = 112
     Width = 113
-    Height = 21
+    Height = 22
     Enabled = False
     TabOrder = 0
   end
@@ -79,15 +80,15 @@ object Form2: TForm2
     Left = 200
     Top = 112
     Width = 209
-    Height = 21
+    Height = 22
     CharCase = ecUpperCase
     TabOrder = 1
   end
   object btnNovo: TButton
-    Left = 56
-    Top = 25
+    Left = 88
+    Top = 17
     Width = 75
-    Height = 25
+    Height = 42
     Caption = 'Cadastrar'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -100,9 +101,9 @@ object Form2: TForm2
   end
   object btnAlterar: TButton
     Left = 157
-    Top = 25
+    Top = 17
     Width = 75
-    Height = 25
+    Height = 42
     Caption = 'Alterar'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -114,10 +115,10 @@ object Form2: TForm2
     OnClick = btnAlterarClick
   end
   object btnExcluir: TButton
-    Left = 261
-    Top = 25
+    Left = 229
+    Top = 17
     Width = 75
-    Height = 25
+    Height = 42
     Caption = 'Excluir'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -129,10 +130,10 @@ object Form2: TForm2
     OnClick = btnExcluirClick
   end
   object btnPesquisar: TButton
-    Left = 640
-    Top = 16
+    Left = 560
+    Top = 17
     Width = 121
-    Height = 42
+    Height = 56
     Caption = 'Pesquisar'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -144,10 +145,10 @@ object Form2: TForm2
     OnClick = btnPesquisarClick
   end
   object btnLimpar: TButton
-    Left = 359
-    Top = 25
+    Left = 303
+    Top = 17
     Width = 75
-    Height = 25
+    Height = 42
     Caption = 'Limpar'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -159,10 +160,10 @@ object Form2: TForm2
     OnClick = btnLimparClick
   end
   object btnImprimir: TButton
-    Left = 464
-    Top = 25
+    Left = 376
+    Top = 17
     Width = 75
-    Height = 25
+    Height = 42
     Caption = 'Imprimir'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -173,21 +174,14 @@ object Form2: TForm2
     TabOrder = 7
     OnClick = btnImprimirClick
   end
-  object txtIdade: TEdit
-    Left = 608
-    Top = 112
-    Width = 48
-    Height = 21
-    TabOrder = 8
-  end
   object txtCpf: TMaskEdit
     Left = 440
     Top = 112
     Width = 116
-    Height = 21
+    Height = 22
     EditMask = '999.999.999-99;1;_'
     MaxLength = 14
-    TabOrder = 9
+    TabOrder = 8
     Text = '   .   .   -  '
   end
   object DBGrid1: TDBGrid
@@ -204,13 +198,20 @@ object Form2: TForm2
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 10
+    TabOrder = 9
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -13
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = [fsBold]
     OnCellClick = DBGrid1CellClick
+  end
+  object txtIdade: TEdit
+    Left = 608
+    Top = 112
+    Width = 48
+    Height = 22
+    TabOrder = 10
   end
   object SQL: TSQLConnection
     ConnectionName = 'MSSQLConnection'
@@ -282,7 +283,7 @@ object Form2: TForm2
   end
   object DataSource1: TDataSource
     DataSet = ClientDataSet1
-    Left = 496
+    Left = 440
     Top = 88
   end
   object Query2: TSQLQuery
@@ -292,7 +293,7 @@ object Form2: TForm2
     SQL.Strings = (
       'select *from TBClientes')
     SQLConnection = SQL
-    Left = 624
+    Left = 504
     Top = 88
   end
 end
