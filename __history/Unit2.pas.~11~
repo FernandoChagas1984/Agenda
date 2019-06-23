@@ -156,11 +156,10 @@ begin
 
 Query2.Close;
 Query2.SQL.Clear;
-Query2.SQL.Add('select * from TBClientes where IdCliente = '''+txtPesquisa.Text+'''');
+Query2.SQL.Add('select * from TBClientes where IdCliente = '''+TxtNome.Text+'''');
 Query2.Open;
 if not Query2.Eof then
   begin
-   txtNome.Text := Query2.FieldByName('Nome').AsString;
    TxtIdade.Text := Query2.FieldByName('Idade').AsString;
    txtCpf.Text := Query2.FieldByName('CPF').AsString;
    txtRef.Text := Query2.FieldByName('IdCliente').AsString;

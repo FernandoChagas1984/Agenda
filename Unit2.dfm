@@ -4,7 +4,7 @@ object Form2: TForm2
   BorderIcons = [biSystemMenu]
   Caption = 'Clientes'
   ClientHeight = 398
-  ClientWidth = 781
+  ClientWidth = 775
   Color = clHotLight
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,7 +17,7 @@ object Form2: TForm2
   PixelsPerInch = 96
   TextHeight = 14
   object Label1: TLabel
-    Left = 56
+    Left = 24
     Top = 88
     Width = 87
     Height = 18
@@ -56,7 +56,7 @@ object Form2: TForm2
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 200
+    Left = 152
     Top = 88
     Width = 48
     Height = 18
@@ -68,8 +68,21 @@ object Form2: TForm2
     Font.Style = [fsBold]
     ParentFont = False
   end
+  object Label5: TLabel
+    Left = 451
+    Top = 25
+    Width = 87
+    Height = 18
+    Caption = 'Refer'#234'ncia:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
   object txtRef: TEdit
-    Left = 56
+    Left = 24
     Top = 112
     Width = 113
     Height = 22
@@ -77,16 +90,16 @@ object Form2: TForm2
     TabOrder = 0
   end
   object txtNome: TEdit
-    Left = 200
+    Left = 152
     Top = 112
-    Width = 209
+    Width = 273
     Height = 22
     CharCase = ecUpperCase
     TabOrder = 1
   end
   object btnNovo: TButton
-    Left = 88
-    Top = 17
+    Left = 24
+    Top = 16
     Width = 75
     Height = 42
     Caption = 'Cadastrar'
@@ -100,8 +113,8 @@ object Form2: TForm2
     OnClick = btnNovoClick
   end
   object btnAlterar: TButton
-    Left = 157
-    Top = 17
+    Left = 94
+    Top = 16
     Width = 75
     Height = 42
     Caption = 'Alterar'
@@ -115,8 +128,8 @@ object Form2: TForm2
     OnClick = btnAlterarClick
   end
   object btnExcluir: TButton
-    Left = 229
-    Top = 17
+    Left = 165
+    Top = 16
     Width = 75
     Height = 42
     Caption = 'Excluir'
@@ -130,8 +143,8 @@ object Form2: TForm2
     OnClick = btnExcluirClick
   end
   object btnPesquisar: TButton
-    Left = 560
-    Top = 17
+    Left = 646
+    Top = 8
     Width = 121
     Height = 56
     Caption = 'Pesquisar'
@@ -145,8 +158,8 @@ object Form2: TForm2
     OnClick = btnPesquisarClick
   end
   object btnLimpar: TButton
-    Left = 303
-    Top = 17
+    Left = 239
+    Top = 16
     Width = 75
     Height = 42
     Caption = 'Limpar'
@@ -160,8 +173,8 @@ object Form2: TForm2
     OnClick = btnLimparClick
   end
   object btnImprimir: TButton
-    Left = 376
-    Top = 17
+    Left = 312
+    Top = 16
     Width = 75
     Height = 42
     Caption = 'Imprimir'
@@ -213,6 +226,13 @@ object Form2: TForm2
     Height = 22
     TabOrder = 10
   end
+  object txtPesquisa: TEdit
+    Left = 544
+    Top = 25
+    Width = 89
+    Height = 22
+    TabOrder = 11
+  end
   object SQL: TSQLConnection
     ConnectionName = 'MSSQLConnection'
     DriverName = 'MSSQL'
@@ -233,8 +253,8 @@ object Form2: TForm2
       'ConnectTimeout=60'
       'Mars_Connection=False')
     Connected = True
-    Left = 24
-    Top = 88
+    Left = 32
+    Top = 312
   end
   object Query1: TSQLQuery
     Active = True
@@ -243,21 +263,21 @@ object Form2: TForm2
     SQL.Strings = (
       'select *from TBClientes')
     SQLConnection = SQL
-    Left = 128
-    Top = 88
+    Left = 104
+    Top = 312
   end
   object DataSetProvider1: TDataSetProvider
     DataSet = Query1
-    Left = 248
-    Top = 88
+    Left = 184
+    Top = 312
   end
   object ClientDataSet1: TClientDataSet
     Active = True
     Aggregates = <>
     Params = <>
     ProviderName = 'DataSetProvider1'
-    Left = 368
-    Top = 88
+    Left = 288
+    Top = 312
     object ClientDataSet1IdCliente: TIntegerField
       DisplayWidth = 12
       FieldName = 'IdCliente'
@@ -283,8 +303,8 @@ object Form2: TForm2
   end
   object DataSource1: TDataSource
     DataSet = ClientDataSet1
-    Left = 440
-    Top = 88
+    Left = 392
+    Top = 312
   end
   object Query2: TSQLQuery
     Active = True
@@ -293,7 +313,7 @@ object Form2: TForm2
     SQL.Strings = (
       'select *from TBClientes')
     SQLConnection = SQL
-    Left = 504
-    Top = 88
+    Left = 488
+    Top = 312
   end
 end
