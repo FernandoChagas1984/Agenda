@@ -10,12 +10,16 @@ type
   TForm3 = class(TForm)
     frxReport1: TfrxReport;
     frxDBDataset1: TfrxDBDataset;
+    frxReport2: TfrxReport;
+    frxDBDataset2: TfrxDBDataset;
     procedure FormDestroy(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
     procedure Relatorio;
+    procedure Relatorios(Tipo : string);
+
   end;
 
 var
@@ -34,8 +38,22 @@ frxDBDataset1.Destroy;
 end;
 
 procedure TForm3.Relatorio;
+var TipoRelatorio : string;
 begin
-frxReport1.ShowReport();
+  if TipoRelatorio = 'Individual' then
+         frxReport1.ShowReport()
+  else
+         frxReport2.ShowReport();
+
+end;
+
+procedure TForm3.Relatorios(Tipo: string);
+begin
+  if Tipo = 'Individual' then
+         frxReport1.ShowReport()
+  else
+         frxReport2.ShowReport();
+
 end;
 
 end.

@@ -45,6 +45,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
     procedure btnImprimirClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -65,7 +66,7 @@ var
 implementation
 
 {$R *.dfm}
-uses Unit3;
+uses Unit1,Unit3,Unit4;
 
 procedure TForm2.Alterar;
 begin
@@ -106,7 +107,7 @@ end;
 
 procedure TForm2.btnImprimirClick(Sender: TObject);
 begin
-Form3.Relatorio;
+Form4.ShowModal;
 end;
 
 procedure TForm2.btnLimparClick(Sender: TObject);
@@ -133,6 +134,7 @@ Query2.SQL.Add('insert into TBClientes values (:Nome,:Sobrenome,:Idade)');
 Query2.ParamByName('Nome').AsString := txtNome.Text;
 Query2.ParamByName('Sobrenome').AsString := txtCpf.Text;
 Query2.ParamByName('Idade').AsString := txtIdade.Text;
+
 try
   Query2.ExecSQL();
   Query1.Refresh;
@@ -153,7 +155,6 @@ end;
 
 procedure TForm2.Consultar;
 begin
-
 Query2.Close;
 Query2.SQL.Clear;
 Query2.SQL.Add('select * from TBClientes where IdCliente = '''+txtPesquisa.Text+'''');
@@ -196,6 +197,12 @@ end;
 procedure TForm2.FormCreate(Sender: TObject);
 begin
 PreencheCampos;
+
+end;
+
+procedure TForm2.FormShow(Sender: TObject);
+begin
+Form1.Enabled := false;
 end;
 
 procedure TForm2.LimparCampos;

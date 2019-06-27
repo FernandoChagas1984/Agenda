@@ -4,7 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.Imaging.pngimage,
+  Vcl.ExtCtrls;
 
 type
   TForm1 = class(TForm)
@@ -17,6 +18,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure Entrar1Click(Sender: TObject);
     procedure Sair2Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -29,22 +31,28 @@ var
 implementation
 
 {$R *.dfm}
-uses Unit2;
+uses Unit2,Unit4,Unit6;
 
 procedure TForm1.Entrar1Click(Sender: TObject);
 begin
 Form2.ShowModal;
 end;
 
+
+procedure TForm1.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+Form6.Show;
+end;
+
 procedure TForm1.FormCreate(Sender: TObject);
 begin
- form1.Color := RGB(0,0,102);
+
  form1.WindowState := wsMaximized;
 end;
 
 procedure TForm1.Sair2Click(Sender: TObject);
 begin
-Form1.Close;
+Form6.Show;
 end;
 
 end.
